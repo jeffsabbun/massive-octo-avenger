@@ -50,7 +50,8 @@ class PostsController < ApplicationController
       :title,
       :body,
       :topic_id,
-      :image
+      :image,
+      :image_cache
     )
   end
 end

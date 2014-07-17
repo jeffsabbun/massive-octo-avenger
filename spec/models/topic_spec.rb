@@ -14,7 +14,7 @@ describe Topic do
  
      describe "private" do
        it "returns a relation of all private topics" do
-         # Your code here
+        expect(Topic.private).to eq( [@private_topic] )
        end
      end
  

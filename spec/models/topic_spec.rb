@@ -1,3 +1,4 @@
+require 'spec_helper'
 describe Topic do
    describe "scopes" do
  
@@ -21,11 +22,12 @@ describe Topic do
      describe "visible_to(user)" do
        it "returns all specs if the user is present" do
          user = true # sneaky solution; we don't need a real user, just something truthy
-         # Your code here
+         expect(Topic.visible_to(user)).to eq([@public_topic])
        end
  
        it "returns only public specs if user is nil" do
-         # Your code here
+         user = nil
+         expect(Topic.visible_to(user)).to eq([])
        end
      end
    end

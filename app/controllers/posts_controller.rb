@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def show
     @topic = Topic.find(params[:topic_id])
+    authorize @topic
     @post = Post.find(params[:id])
     @new_comment = Comment.new
   end
@@ -60,6 +61,12 @@ class PostsController < ApplicationController
       flash[:error] = "There was an error deleting the post."
       render :show
     end
+  end
+
+  def index
+    # Sorted by popularity
+    @posts = Post.visible_to(current_user).where("posts.created_at > ?",7.days.ago).paginate(page: params[:page], per_page: 10)
+    authorize @posts
   end
 
   private

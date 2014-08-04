@@ -13,6 +13,10 @@ group :development do
   gem 'sqlite3'
 end
 
+group :test do
+  gem 'rspec-rails'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
@@ -70,3 +74,4 @@ gem 'mini_magick'
 gem 'fog'
 
 gem 'will_paginate', '~> 3.0.5'
+

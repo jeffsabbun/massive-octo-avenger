@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 require 'spec_helper'
+=======
+require 'rails_helper'
+>>>>>>> another-interlude
 
 describe Vote do
   describe "validations" do

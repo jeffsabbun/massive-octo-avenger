@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 spec/models/post_spec.rb
 
+=======
+>>>>>>> another-interlude
 require 'rails_helper'
  
  describe Post do

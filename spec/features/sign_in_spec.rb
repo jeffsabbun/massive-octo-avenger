@@ -14,12 +14,15 @@ it "redirects to the topics index" do
     user = authenticated_user
     visit root_path
 
-    	click_link 'Sign In'
     	within '.user-info' do
          	click_link 'Sign In'
        	end
        	fill_in 'Email', with: user.email
        	fill_in 'Password', with: user.password
+
        		within 'form' do
-         	click_link 'Sign In'
+         		click_button 'Sign in'
+       		end
+
+       			expect(current_path).to eq topics_path
 end

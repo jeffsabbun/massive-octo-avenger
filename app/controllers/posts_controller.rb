@@ -25,6 +25,7 @@ class PostsController < ApplicationController
 
     authorize @post
     if @post.save
+       @post.create_vote
       redirect_to [@topic, @post], notice: "Post was saved successfully."
     else
       flash[:error] = "There was an error saving the post. Please try again."

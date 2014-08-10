@@ -9,12 +9,10 @@ group :production do
   gem 'rails_12factor'
 end
 
-group :development do
+group :development, :test do
   gem 'sqlite3'
-end
-
-group :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.14.1'
+  gem 'capybara'
 end
 
 # Use SCSS for stylesheets

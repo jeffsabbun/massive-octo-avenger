@@ -11,7 +11,7 @@ Bloccit::Application.routes.draw do
       resources :favorites, only: [:create, :destroy]
     end
   end
-  resources :users, only: [:update]
+  resources :users, only: [:update, :show]
   get 'about' => 'welcome#about'
 
   root to: 'welcome#index'

@@ -31,6 +31,5 @@
       <%= render partial: 'comment_form', locals: { topic: @topic, post: @post, comment: @new_comment } %>
     <% end %>
   </div>
-  <%= render partial: 'comments', locals: { comments: @comments } %>
+  <%= render partial: 'comments/comment', collection: @comments, locals: { comments: } %>
 </div>
-

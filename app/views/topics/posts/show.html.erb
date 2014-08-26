@@ -24,6 +24,7 @@
       <small>
         <%= pluralize(@post.up_votes, 'up vote') %>, 
         <%= pluralize(@post.down_votes, 'down vote') %>
+        <div class='js-comments-count'><%= pluralize(@user.comments.count, 'comment') %></div>
       </small>
     </div>
     <%= render partial: 'favorites/favorite', locals: { topic: @topic, post: @post } %>
@@ -31,5 +32,5 @@
       <%= render partial: 'comment_form', locals: { topic: @topic, post: @post, comment: @new_comment } %>
     <% end %>
   </div>
-  <%= render partial: 'comments/comment', collection: @comments, locals: { comments: } %>
+  <%= render partial: 'comments/comment', collection: @comments, locals: { topic: @topic, post: @post } %>
 </div>
